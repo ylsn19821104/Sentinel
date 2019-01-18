@@ -54,7 +54,7 @@ public class PullConsumerDemo {
         initFlowControlRule();
 
         DefaultMQPullConsumer consumer = new DefaultMQPullConsumer(Constants.TEST_GROUP_NAME);
-
+        consumer.setNamesrvAddr("localhost:9876");
         consumer.start();
 
         Set<MessageQueue> mqs = consumer.fetchSubscribeMessageQueues(Constants.TEST_TOPIC_NAME);
